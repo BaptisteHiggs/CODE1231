@@ -38,8 +38,8 @@ void loop() {
   count++;
   if (sensorValue == 1) {
     pressCount++;
-    Serial.println(pressCount);
     delay(500);
   }
+  Serial.println(pressCount);
   delay(1);        // delay in between reads for stability
 }
