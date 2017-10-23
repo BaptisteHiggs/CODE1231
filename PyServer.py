@@ -41,7 +41,7 @@ def test():
         print 'oopsies'
     print 'wowsers'
     print valCount
-    return render_template('bikestat.html', num_people=str(valCount))
+    return render_template('bikestat.html', num_people=str(valCount), num_emissions=str(valCount*6.7))
 
 if __name__ == '__main__':
     app.run(host='0.0.0.0')
