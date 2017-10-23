@@ -19,6 +19,10 @@ int buttonState = 0;         // current state of the button
 int lastButtonState = 0;     // previous state of the button
 int count = 1;
 int pressCount = 0;
+int loopTime = 500;
+int startPin = 4;
+int endPin = 11;
+int currentPin = 4;
 
 void setup() {
   // initialize the button pin as a input:
@@ -27,6 +31,17 @@ void setup() {
   pinMode(ledPin, OUTPUT);
   // initialize serial communication:
   Serial.begin(9600);
+  pinMode(3, OUTPUT);
+  pinMode(4, OUTPUT);
+  pinMode(5, OUTPUT);
+  pinMode(6, OUTPUT);
+  pinMode(7, OUTPUT);
+  pinMode(8, OUTPUT);
+  pinMode(9, OUTPUT);
+  pinMode(10, OUTPUT);
+  pinMode(11, OUTPUT);
+  pinMode(12, OUTPUT);
+  pinMode(13, OUTPUT);
 }
 
 
@@ -35,11 +50,25 @@ void loop() {
   // read the input on analog pin 0:
   int sensorValue = digitalRead(buttonPin);
   // print out the value you read:
-  count++;
+
   if (sensorValue == 1) {
     pressCount++;
     delay(500);
   }
+
+  // Doing the rando loop stuff
+  count++;
+
+  if (count > loopTime) {
+    count = 0;
+    digitalWrite(currentPin, LOW);
+    currentPin += 1;
+    if (currentPin > endPin) {
+      currentPin = startPin;
+    }
+    digitalWrite(currentPin, HIGH);
+  }
+  
   Serial.println(pressCount);
   delay(1);        // delay in between reads for stability
 }
