@@ -3,15 +3,15 @@ whiteText {
 }
 
 bronzeText {
-    color: #f7f2d3;
+    color: rgb(191, 102, 40);
 }
 
 desTheme * {
     background-color: rgba(255, 255, 255, 0.7);
-    color: #e97100 !important;
+    color: rgb(191, 102, 40) !important;
 }
 
 desTheme {
     background-color: rgba(255, 255, 255, 0.7);
-    color: #e97100;
+    color: rgb(191, 102, 40);
 }
