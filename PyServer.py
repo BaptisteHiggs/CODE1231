@@ -8,7 +8,7 @@ app = Flask(__name__)
 
 import serial
 
-@app.route('/')
+@app.route('/test')
 def count():
     # Logic for getting arduino stuff
     from_arduino = -1
@@ -21,7 +21,7 @@ def count():
 
 
 
-@app.route('/test')
+@app.route('/')
 def test():
     # Logic for getting arduino stuff
     #from_arduino = -1
@@ -35,7 +35,7 @@ def test():
     ser = serial.Serial('COM3', 9600)
     from_arduino = ser.readline()
     print from_arduino
-    return render_template('bikestat.html', num_people=from_arduino)
+    return render_template('bikestat.html', num_people="10")
 
 
 app.run(host='0.0.0.0', debug=True)
