@@ -12,3 +12,5 @@ def count():
     from_arduino = int(ser.readline())
     print from_arduino
     return str(from_arduino)
+    #print "hey I'm working"
+    #return str("woah I'm working")
