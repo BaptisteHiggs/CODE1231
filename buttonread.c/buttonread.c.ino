@@ -17,6 +17,8 @@ const int ledPin = 13;       // the pin that the LED is attached to
 int buttonPushCounter = 0;   // counter for the number of button presses
 int buttonState = 0;         // current state of the button
 int lastButtonState = 0;     // previous state of the button
+int count = 1;
+int pressCount = 0;
 
 void setup() {
   // initialize the button pin as a input:
@@ -33,6 +35,11 @@ void loop() {
   // read the input on analog pin 0:
   int sensorValue = digitalRead(buttonPin);
   // print out the value you read:
-  Serial.println(sensorValue);
+  count++;
+  if (sensorValue == 1) {
+    pressCount++;
+    Serial.println(pressCount);
+    delay(500);
+  }
   delay(1);        // delay in between reads for stability
 }
