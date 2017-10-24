@@ -16,6 +16,6 @@ desTheme {
     color: rgb(191, 102, 40);
 }
 
-small {
-    colour: #339911;
+smallText * {
+    font-size: 25px !important;
 }
